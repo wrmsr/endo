@@ -2,9 +2,9 @@
 # file(GLOB endo_impl "endo/impl/*.cpp")
 # file(GLOB endo_test "endo/test/*.cpp")
 
-set(libendo_iface endo/fib.hpp)
-set(libendo_impl endo/impl/fib.cpp)
-set(libendo_test endo/test/fib_test.cpp)
+set(libendo_include include/endo/fib.hpp)
+set(libendo_source source/endo/fib.cpp)
+set(libendo_test test/endo/fib_test.cpp)
 
-add_library(libendo ${libendo_iface} ${libendo_impl})
-target_include_directories(libendo PUBLIC ./)
+add_library(libendo ${libendo_include} ${libendo_source})
+target_include_directories(libendo PUBLIC ./include)

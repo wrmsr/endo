@@ -1,6 +1,6 @@
-set(endo_iface)
-set(endo_impl endo/impl/main.cpp)
+set(endo_include)
+set(endo_source source/endo/main.cpp)
 set(endo_test)
 
-add_executable(endo ${endo_iface} ${endo_impl})
+add_executable(endo ${endo_source})
 target_link_libraries(endo libendo)
