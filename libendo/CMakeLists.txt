@@ -6,4 +6,4 @@ add_library(libendo ${libendo_include} ${libendo_source})
 target_include_directories(libendo PUBLIC ./include)
 
 add_executable(testlibendo ${libendo_include} ${libendo_test})
-target_link_libraries(testlibendo libendo)
+target_link_libraries(testlibendo libendo google::googletest)
