@@ -40,7 +40,7 @@ private:
       });
   }
 
-  tcp::socket socket_;
+  boost::asio::ip::tcp::socket socket_;
   enum {
     max_length = 1024
   };
@@ -50,7 +50,7 @@ private:
 class Server {
 public:
   Server(boost::asio::io_service &io_service, short port)
-    : acceptor_(io_service, tcp::endpoint(tcp::v4(), port)),
+    : acceptor_(io_service, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port)),
       socket_(io_service) {
     do_accept();
   }
@@ -68,21 +68,23 @@ private:
       });
   }
 
-  tcp::acceptor acceptor_;
-  tcp::socket socket_;
+  boost::asio::ip::tcp::acceptor acceptor_;
+  boost::asio::ip::tcp::socket socket_;
 };
 
 int endo_main(int argc, char *argv[]) {
   google::InitGoogleLogging(argv[0]);
+
   try {
-    if (argc != 2) {
-      std::cerr << "Usage: async_tcp_echo_server <port>\n";
-      return 1;
-    }
+    // if (argc != 2) {
+    //   std::cerr << "Usage: async_tcp_echo_server <port>\n";
+    //   return 1;
+    // }
 
     boost::asio::io_service io_service;
 
-    Server s(io_service, std::atoi(argv[1]));
+    const short port = 9999; // std::atoi(argv[1]);
+    Server s(io_service, port);
 
     io_service.run();
   }

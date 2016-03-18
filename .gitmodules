@@ -16,3 +16,9 @@
 [submodule "external/ftl/ftl"]
 	path = external/ftl/ftl
 	url = https://github.com/beark/ftl
+[submodule "external/nghttp2"]
+	path = external/nghttp2
+	url = https://github.com/tatsuhiro-t/nghttp2
+[submodule "external/jemalloc"]
+	path = external/jemalloc
+	url = https://github.com/jemalloc/jemalloc
