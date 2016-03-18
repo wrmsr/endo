@@ -1,8 +1,5 @@
-#include <iostream>
-
-#include "endo/fib.hpp"
+#include "endo/endo.hpp"
 
 int main(int argc, char *argv[]) {
-  std::cout << fib(argc) << std::endl;
-  return 0;
+  return endo_main(argc, argv);
 }

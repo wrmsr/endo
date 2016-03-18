@@ -4,3 +4,15 @@
 [submodule "external/fruit/fruit"]
 	path = external/fruit/fruit
 	url = https://github.com/google/fruit
+[submodule "external/folly/folly"]
+	path = external/folly/folly
+	url = https://github.com/facebook/folly
+[submodule "external/glog/glog"]
+	path = external/glog/glog
+	url = https://github.com/google/glog
+[submodule "external/gflags/gflags"]
+	path = external/gflags/gflags
+	url = https://github.com/gflags/gflags
+[submodule "external/ftl/ftl"]
+	path = external/ftl/ftl
+	url = https://github.com/beark/ftl
