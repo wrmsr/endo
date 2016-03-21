@@ -1,3 +1,4 @@
 add_subdirectory(fruit)
+add_subdirectory(ftl)
 add_subdirectory(glog)
 add_subdirectory(googletest)

@@ -5,3 +5,10 @@ http://blog.imgtec.com/powervr/a-look-at-the-powervr-graphics-architecture-tile-
 http://blog.imgtec.com/powervr/tiling-positive-or-how-vulkan-maps-to-powervr-gpus
 
 https://www.perforce.com/blog/141218/git-beyond-basics-using-shallow-clones
+
+https://stackoverflow.com/questions/28761323/how-to-include-external-library-boost-into-clion-c-project-with-cmake
+https://stackoverflow.com/questions/5971921/building-a-library-using-autotools-from-cmake
+https://cmake.org/cmake/help/v2.8.8/cmake.html#module%3aExternalProject
+https://github.com/DOCGroup/ATCD
+https://github.com/justusc/FindTBB
+https://github.com/intel-tbb/intel-tbb

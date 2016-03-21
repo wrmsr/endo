@@ -11,11 +11,7 @@ set(libendo_test
         test/endo/main.cpp
         test/endo/endo_test.cpp
         )
-
-add_library(libendo ${libendo_include} ${libendo_source})
-set_target_properties(libendo PROPERTIES COMPILE_FLAGS -std=c++14)
-target_include_directories(libendo PUBLIC ./include)
-target_link_libraries(libendo
+set(libendo_libs
         glog
         fruitext
         ${Boost_LIBRARIES}
@@ -24,8 +20,10 @@ target_link_libraries(libendo
         ${Boost_REGEX_LIBRARY}
         )
 
+add_library(libendo ${libendo_include} ${libendo_source})
+set_target_properties(libendo PROPERTIES COMPILE_FLAGS -std=c++14)
+target_include_directories(libendo PUBLIC ./include)
+target_link_libraries(libendo ${libendo_libs})
+
 add_executable(testlibendo ${libendo_include} ${libendo_test})
-target_link_libraries(testlibendo
-        libendo
-        googletest
-        )
+target_link_libraries(testlibendo libendo ${libendo_libs} googletest)

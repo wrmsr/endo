@@ -32,7 +32,8 @@ private:
   void do_write(std::size_t length) {
     auto self(shared_from_this());
     boost::asio::async_write(
-      socket_, boost::asio::buffer(data_, length),
+      socket_,
+      boost::asio::buffer(data_, length),
       [this, self](boost::system::error_code ec, std::size_t /*length*/) {
         if (!ec) {
           do_read();

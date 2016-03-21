@@ -22,3 +22,9 @@
 [submodule "external/jemalloc"]
 	path = external/jemalloc
 	url = https://github.com/jemalloc/jemalloc
+[submodule "external/jemalloc/jemalloc"]
+	path = external/jemalloc/jemalloc
+	url = https://github.com/jemalloc/jemalloc
+[submodule "external/nghttp2/nghttp2"]
+	path = external/nghttp2/nghttp2
+	url = https://github.com/tatsuhiro-t/nghttp2

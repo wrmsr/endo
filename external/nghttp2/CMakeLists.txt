@@ -1,0 +1,4 @@
+ExternalProject_Add(nghttp2
+    SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/nghttp2
+    CONFIGURE_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/nghttp2/configure --prefix=<INSTALL_DIR>
+    BUILD_COMMAND ${MAKE})
