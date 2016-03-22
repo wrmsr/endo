@@ -13,6 +13,7 @@ set(libendo_test
         )
 set(libendo_libs
         glog
+        ftl
         fruitext
         ${Boost_LIBRARIES}
         ${Boost_FILESYSTEM_LIBRARY}
@@ -26,4 +27,5 @@ target_include_directories(libendo PUBLIC ./include)
 target_link_libraries(libendo ${libendo_libs})
 
 add_executable(testlibendo ${libendo_include} ${libendo_test})
+set_target_properties(testlibendo PROPERTIES COMPILE_FLAGS -std=c++14)
 target_link_libraries(testlibendo libendo ${libendo_libs} googletest)
