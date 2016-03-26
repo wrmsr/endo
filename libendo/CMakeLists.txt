@@ -14,7 +14,7 @@ set(libendo_test
 set(libendo_libs
         glog
         ftl
-        fruitext
+        fruit
         ${Boost_LIBRARIES}
         ${Boost_FILESYSTEM_LIBRARY}
         ${Boost_SYSTEM_LIBRARY}

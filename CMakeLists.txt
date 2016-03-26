@@ -6,6 +6,11 @@ include(ExternalProject)
 
 # add_definitions(-std=c++14)
 
+enable_language(CXX)
+set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
+find_package(Threads REQUIRED)
+set(CMAKE_C_FLAGS ${CMAKE_C_FLAGS} "-pthread")
+
 project(endo)
 
 add_subdirectory(external)

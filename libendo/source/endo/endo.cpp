@@ -75,6 +75,7 @@ private:
 
 int endo_main(int argc, char *argv[]) {
   google::InitGoogleLogging(argv[0]);
+  LOG(INFO) << "hi";
 
   try {
     // if (argc != 2) {

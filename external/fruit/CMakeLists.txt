@@ -1,19 +1,27 @@
-# DISABLE CMP0037: Target names should not be reserved and should match a validity pattern.
 set_policy(CMP0037 OLD)
+set(CMAKE_MACOSX_RPATH 1)
 
-add_subdirectory(fruit)
+add_subdirectory(fruit/configuration)
 
-target_include_directories(fruit PUBLIC fruit/include)
-
-# Create interface library to link against gmock
-add_library(fruitext INTERFACE)
-
-target_include_directories(fruitext
-    SYSTEM INTERFACE
-    ${CMAKE_CURRENT_SOURCE_DIR}/fruit/include
+configure_file(
+    fruit/configuration/fruit-config-base.h.in
+    fruit/impl/fruit-config-base.h
 )
 
-target_link_libraries(fruitext
-    INTERFACE
-    fruit
+add_library(fruit
+    fruit/src/demangle_type_name.cpp
+    fruit/src/component_storage.cpp
+    fruit/src/injector_storage.cpp
+    fruit/src/normalized_component_storage.cpp
+    fruit/src/semistatic_map.cpp
+)
+
+target_compile_options(fruit PRIVATE
+    -std=c++14
+)
+
+target_include_directories(fruit PUBLIC
+    fruit/include
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_BINARY_DIR}/include
 )
