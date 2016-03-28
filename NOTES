@@ -12,3 +12,6 @@ https://cmake.org/cmake/help/v2.8.8/cmake.html#module%3aExternalProject
 https://github.com/DOCGroup/ATCD
 https://github.com/justusc/FindTBB
 https://github.com/intel-tbb/intel-tbb
+
+https://svn.boost.org/trac/boost/wiki/CMakeConfigAndBuild
+https://github.com/nlohmann/json

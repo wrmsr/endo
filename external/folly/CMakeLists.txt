@@ -1,15 +1,3 @@
-# FormatTables.cpp: build/generate_format_tables.py
-# 	$(PYTHON) build/generate_format_tables.py
-# CLEANFILES += FormatTables.cpp
-# 
-# EscapeTables.cpp: build/generate_escape_tables.py
-# 	$(PYTHON) build/generate_escape_tables.py
-# CLEANFILES += EscapeTables.cpp
-# 
-# GroupVarintTables.cpp: build/generate_varint_tables.py
-# 	$(PYTHON) build/generate_varint_tables.py
-# CLEANFILES += GroupVarintTables.cpp
-
 add_library(folly
 
 	folly/folly/Conv.cpp
@@ -110,6 +98,36 @@ add_library(folly
 	folly/folly/experimental/TestUtil.cpp
 
 )
+
+add_custom_command(
+    OUTPUT folly/folly/FormatTables.cpp
+    COMMAND python build/generate_format_tables.py
+    WORKING_DIRECTORY folly/folly/
+)
+
+add_custom_command(
+    OUTPUT folly/folly/EscapeTables.cpp
+    COMMAND python build/generate_escape_tables.py
+    WORKING_DIRECTORY folly/folly/
+)
+
+add_custom_command(
+    OUTPUT folly/folly/GroupVarintTables.cpp
+    COMMAND python build/generate_varint_tables.py
+    WORKING_DIRECTORY folly/folly/
+)
+
+# FormatTables.cpp: build/generate_format_tables.py
+# 	$(PYTHON) build/generate_format_tables.py
+# CLEANFILES += FormatTables.cpp
+# 
+# EscapeTables.cpp: build/generate_escape_tables.py
+# 	$(PYTHON) build/generate_escape_tables.py
+# CLEANFILES += EscapeTables.cpp
+# 
+# GroupVarintTables.cpp: build/generate_varint_tables.py
+# 	$(PYTHON) build/generate_varint_tables.py
+# CLEANFILES += GroupVarintTables.cpp
 
 # if HAVE_LINUX
 # nobase_follyinclude_HEADERS += \
